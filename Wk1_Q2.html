@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Week 1 Q 2</title>
+
+    <script>
+        function getValues1(){
+            var r = document.getElementsByTagName('input');
+            
+            for(let i = 0; i <r.length-1; i++){
+                if(r[i].checked)
+                    document.getElementById("result1").innerHTML= (r[i].value).toUpperCase();
+            }
+           
+        }
+
+        function getValues2(){
+            var r = document.getElementsByTagName('input');
+            
+            for(let i = 0; i <r.length-1; i++){
+                if(r[i].checked)
+                    document.getElementById("result2").innerHTML= (r[i].value).toUpperCase();
+            }
+           
+        }
+       
+    </script>
+
+</head>
+<body>
+
+    Pizza:<br>
+    <input type="radio" name="gr1" checked value="Marguerita">Margherita</input><br>
+    <input type="radio" name="gr1" checked value="Pepperoni">Pepperoni</input><br>
+    <hr>
+    <input type="button" onclick="getValues1()" value="SHOW">
+    <br>
+    <label id="result1"></label>
+ 
+    Beverage:<br>
+    <input type="radio" name="gr2" checked value="Wine">Wine</input><br>
+    <input type="radio" name="gr2" checked value="Beer">Beer</input><br>
+    <hr>
+    <input type="button" onclick="getValues2()" value="SHOW">
+    <br>
+    <label id="result2"></label>
+    <hr>
+    
+</body>
+
+ <!--   Had some trouble separating the function by groups when displaying --> 
+
+</html>

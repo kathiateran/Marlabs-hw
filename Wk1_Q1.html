@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Week 1 Q 1</title>
+
+    <script language="JavaScript">
+      function enable_text(status) {
+        status = !status;
+        document.f1.other_text.disabled = status;
+      }
+    </script>
+  </head>
+  <body onload="enable_text(false);">
+    <form name="f1" method="post">
+      <input
+        type="checkbox"
+        name="others"
+        onclick="enable_text(this.checked)"
+      />Name
+      <input type="text" name="other_text" />
+    </form>
+  </body>
+</html>
