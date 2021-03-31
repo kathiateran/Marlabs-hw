@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      div {
+        border: 1px solid black;
+        height: 200px;
+        width: 300px;
+      }
+    </style>
+    <script>
+      function allowDrop(ev) {
+        ev.preventDefault();
+      }
+      function drag(ev) {
+        ev.dataTransfer.setData('Text', ev.target.id);
+      }
+      function drop(ev) {
+        ev.preventDefault();
+        var data = ev.dataTransfer.getData('Text');
+        ev.target.appendChild(document.getElementById(data));
+      }
+
+      //DRAG & DROP FROM DESKTOP:
+      function dropHandler(ev) {
+        console.log('File(s) dropped');
+
+        // Prevent default behavior (Prevent file from being opened)
+        ev.preventDefault();
+
+        if (ev.dataTransfer.items) {
+          // Use DataTransferItemList interface to access the file(s)
+          for (var i = 0; i < ev.dataTransfer.items.length; i++) {
+            // If dropped items aren't files, reject them
+            if (ev.dataTransfer.items[i].kind === 'file') {
+              var file = ev.dataTransfer.items[i].getAsFile();
+              console.log('... file[' + i + '].name = ' + file.name);
+            }
+          }
+        } else {
+          // Use DataTransfer interface to access the file(s)
+          for (var i = 0; i < ev.dataTransfer.files.length; i++) {
+            console.log(
+              '... file[' + i + '].name = ' + ev.dataTransfer.files[i].name
+            );
+          }
+        }
+      }
+      //Prevents the browser's default drag behavior
+      function dragOverHandler(ev) {
+        console.log('File(s) in drop zone');
+
+        // Prevent default behavior (Prevent file from being opened)
+        ev.preventDefault();
+      }
+    </script>
+  </head>
+
+  <body>
+    <div id="div1" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+
+    <div id="div2" ondrop="drop(event)" ondragover="allowDrop(event)">
+      <image
+        ondragstart="drag(event)"
+        draggable="true"
+        style="height: 200px; width: 300px"
+        src="images/small.jpeg"
+        id="drag1"
+      />
+    </div>
+
+    <div
+      id="drop_zone"
+      ondrop="dropHandler(event);"
+      ondragover="dragOverHandler(event);"
+    >
+      <p style="text-align: center">
+        drag and drop image/file from desktop here
+      </p>
+    </div>
+  </body>
+</html>
