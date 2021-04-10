@@ -27,24 +27,16 @@ body {
   height: 310px;
   align-items: center;
   align-content: center;
+  padding-right: 1em;
 }
 
 .item-1 {
-  background-color: white;
   border-right: 1px solid gray;
   border-color: gray;
-  padding-right: 1em;
 }
 
 .item-2 {
-  background-color: white;
   border-right: 1px solid gray;
   border-color: gray;
-  padding-right: 1em;
 }
 
-.item-3 {
-  background-color: white;
-  border-color: gray;
-  padding-right: 1em;
-}
