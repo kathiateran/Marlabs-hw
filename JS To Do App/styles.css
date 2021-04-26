@@ -23,7 +23,7 @@ h1 {
   text-align: center;
 }
 
-/* STYLYING INPUT ELEMENT AND THe EBUTTON */
+/* Input Form */
 form {
   display: flex;
   min-height: 15vh;
@@ -52,7 +52,7 @@ form button:hover {
   color: #753dce;
 }
 
-/* STYLING CONTAINER WHERE THE TASKS ARE SHOWN */
+/* Task Container */
 .todo_container {
   display: flex;
   justify-content: center;
@@ -81,7 +81,7 @@ form button:hover {
   margin-left: 8px;
 }
 
-/* STYLING THE BUTTONS ON THE TASKS  */
+/* Task buttons */
 .delete_btn {
   padding: 0.5rem;
   background: rgb(205, 113, 241);
@@ -119,12 +119,12 @@ form button:hover {
   pointer-events: none;
 }
 
-/* STYLING TASK THAT IS COMPLETED */
+/* Completed Task */
 .completedItem {
   opacity: 0.4;
   transform: scale(0.96);
 }
-/* DELETING THE TASKS */
+/* Delete Tasks */
 .fall {
   transform: translateY(2rem) scale(0.2) rotateZ(20deg);
   opacity: 0;
