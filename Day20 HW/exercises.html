@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JS & DOM</title>
+    <style>
+        .style12 {
+          width: 100px;
+          height: 20px;
+          background-color: rgb(119, 188, 197);
+          color: white;
+          font-size: 15px;
+        }
+        </style>
+</head>
+<body>
+
+    <p id = "div1">1. createElement(), appendChild(), insertBefore():</p>
+   
+    <p><br> 2. textContent() & innerHTML():
+    <br><button onclick="getText()" id="myBtn">What's up</button>
+    <p id="demo"></p>   
+    </p>
+
+    <p>3. innerHTML causes the web browsers to reparse and recreate all DOM nodes inside the div element. 
+        <br>Creating a new element and appending it to the DOM tree provides better performance than the innerHTML .</p>
+
+    <p><br>4. append()</p>
+    <div id="div3"></div>
+
+    <p><br>5. prepend()</p>
+    <ul id="prepnd">
+        <li>not prepended</li>
+    </ul>
+
+    <p><br>6. replaceChild()</p>
+    <ul id="menu">
+        <li>1</li>
+        <li>2</li>
+    </ul>
+
+    <p><br>7. removeChild()</p>
+    <p>Button removes the first item from the list:</p>
+    <button onclick="firstItem()">remove</button>
+    <ul id="firstChild">
+        <li>item 1</li>
+        <li>item 2</li>
+        <li>item 3</li>
+    </ul>
+
+    <p><br>8. cloneNode()</p>
+    <p>Button copies item from one list to another.</p>
+    <button onclick="cloneItem()">Clone</button>
+    <ul id="myList1"><li>one</li><li>two</li></ul>
+    <ul id="myList2"><li style="color: blue;">three</li></ul>
+
+    <p><br>9. getAttribute()</p>
+    <h4 class="attributeTitle">What is my Attribute?</h4>
+    <button onclick="whatAtt()">Show</button>
+    <p id="attDemo"></p>
+
+    <p><br>10. setAttribute()</p>
+    <p>Button disabled due to setAttribute().</p>
+    <button id="disabled">Disabled</button>
+
+    <p><br>11. removeAttribute() & Style attribute & Elements height</p>
+    <p style="color: green;" width="50px">this is before removing the attribute</p>
+    <p id="rmv" style="color: green;" width="50px">this is after (style removed)</p>
+    
+    <p><br>12. classList Property: useful to add, remove and toggle CSS classes on an element</p>
+    <p>Click the button to add the style.</p>
+    <button onclick="addStyle()">Add</button>
+    <div id="myDIV">Style me</div>
+
+    <p><br>13. Page Events - an HTML page has three important events:</p>
+    <ul>
+        <li>DOMContentLoaded</li>
+        <li>load</li>
+        <li>beforeunload/unload</li>
+    </ul>
+    <p>When the browser processes an HTML-document and comes across a 'script' tag, it needs to execute before continuing building the DOM</p>
+    
+    <p><br>14. JS Events: trigger actions on HTML elements</p>
+    <p>A button that has an 'onclick' will trigger some action set by JS: </p>
+    <button onclick="alert('Hello')">click</button>
+
+    <p><br>15. Mouse Events: there are many <br>The below will tell you if the SHIFT key was pressed when the onmousedown event</p>
+    <p onmousedown="isKeyPressed(event)"><strong> click on here</strong></p>
+
+    <p><br>16. Scroll Event - onscroll event occurs when an element's scrollbar is being scrolled. 
+
+
+
+   
+
+    <script src="./functions.js"></script>
+</body>
+</html>
